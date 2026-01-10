@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./parts/head") %>
+<body>
+    <%- include("./parts/nav") %>
+    <%- include("./parts/header")%>
+
+    <%info.map(message=>{%>
+        <a href=<%=message.msgId%>>
+            <div class="message">
+                <div class="msgTop">
+                    <p class="msgDate"><%=message.added%></p>
+                    <h2 class="msgName"><%=message.user%></h2>
+                </div>
+                <p class="mgsText"><%=message.text%></p>
+            </div>
+        </a>
+    <% })%>
+
+</body>
+</html>

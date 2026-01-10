@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./parts/head") %>
+<body>
+    <%- include("./parts/nav") %>
+
+    <div class="individual">
+        <div class="msgTop">
+            <p class="msgDate"><%=info.added %></p>            
+            <h2 class="msgName"><%=info.user %></h2>
+        </div>
+        <p class="msgText"><%=info.text %></p>
+    </div>
+</body>
+</html>
+
