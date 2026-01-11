@@ -1,22 +1,7 @@
 const express = require('express')
 const indexRouter = express.Router()
 
-const messages = [
-  {
-    text: "First time posting here. This place feels like it’s one CSS file away from greatness.",
-    user: "Jonathan",
-    added: `${new Date().getDate()}.${new Date().getMonth() > 9 ? new Date().getMonth()+1: 0+String(new Date().getMonth()+1)}.${new Date().getFullYear()}`,
-    msgId:crypto.randomUUID()
-  },
-  {
-    text: "Coffee finished. Motivation pending.",
-    user: "MikeyLikey",
-    added: `${new Date().getDate()}.${new Date().getMonth() > 9 ? new Date().getMonth()+1: 0+String(new Date().getMonth()+1)}.${new Date().getFullYear()}`,
-    msgId:crypto.randomUUID()
-  }
-];
-
-
+const messages = [];
 
 indexRouter.get('/',(req,res)=>{
     res.render('index',{title:'Home',header:'All messages',info:messages})
