@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include("./parts/head") %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <%- include("./parts/nav") %>
-    <%- include("./parts/header")%>
+    <form method="get" action="/">
+        <label for="search"></label>
+        <input type="text" id="search" name="search" placeholder="search">
+        <button type="submit">Search</button>
+    </form>
 
-    <%info.map(message=>{%>
-        <a href=<%=message.msgId%>>
-            <div class="message">
-                <div class="msgTop">
-                    <p class="msgDate"><%=message.added%></p>
-                    <h2 class="msgName"><%=message.user%></h2>
-                </div>
-                <p class="mgsText"><%=message.text%></p>
-            </div>
-        </a>
-    <% })%>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/new">Add user</a>
+    </nav>
+    <ul class="usersList">
+        <%usernames.map((user)=>{%>
+                <li><%=user.username%></li>
+        <%}) %>
+    </ul>
 
+
+    <a href="/delete"><button>Delete</button></a>
 </body>
 </html>
